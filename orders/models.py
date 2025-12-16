@@ -10,4 +10,3 @@ class Coupon(models.Model):
 
     def __str__(self):
         return f"{self.code}({self.discount_percentage}% off)"
-
