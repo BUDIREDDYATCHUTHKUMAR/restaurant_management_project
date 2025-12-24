@@ -1,0 +1,10 @@
+PENDING="Pending"
+PROCESSING="Processing"
+COMPLETED="Completed"
+CANCELLED="Cancelled"
+__all__=[
+    "Pending",
+    "Processing",
+    "Completed",
+    "cancelled"
+]
