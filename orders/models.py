@@ -15,3 +15,8 @@ class OrderStatus(models.Model):
 
     def __str__(self):
         return self.name
+class Orders(models.Model):
+    status=models.Foreign_Key(OrderStatus,on_delete=SET_NULL,null=True,blank=True)
+
+def __str__(self):
+    return f"Order #{self.pk}"
