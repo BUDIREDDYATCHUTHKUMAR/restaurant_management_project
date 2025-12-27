@@ -1,2 +1,2 @@
 from django.utils.crypto import get_random_string
-from .models import 
+from .models import Coupon
