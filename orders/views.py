@@ -3,8 +3,21 @@ from django.utils import timezone
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated'
+from .models import Order,Coupon
+from .serializers import OrderHistorySerializer
 
-from .models import Coupon
+class UserOrderHistoryView(generics.ListAPIView):
+    serializer_class=OrderHistorySerializer
+    permission_classes=[IsAuthenticated]
+
+    def get_queryset(self):
+        return order.objects.filter(user=self.request.user).order_by('-created_at')
+
+
+
+
 
 
 class CouponValidationView(APIView):
